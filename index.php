@@ -10,8 +10,9 @@ function getserver(){
 }
 
 function servers(){
-    $servers = array("numara1","numara2","numara3","numara4","numara5","numara6","numara7","numara8","numara9","numara10","numara11","numara12","numara13","numara14","numara15","numara16","numara17","numara18","numara19","numara20");
-    return $servers;
+    $server = getserver();
+    $array = getresult($server."api.php?servers=1");
+    return $array;
 }
 
 
@@ -194,7 +195,6 @@ function ayikla($text){
         $newbio = str_replace(' ', '', $newbio);
         $newbio = str_replace('-', '', $newbio);
         $newbio = str_replace('(', '', $newbio);
-
         $newbio = str_replace(')', '', $newbio);
         if(is_numeric(substr($newbio, 0, 10))){
             $number = substr($newbio, 0, 10);
